@@ -105,5 +105,5 @@ document.querySelectorAll("[data-copy]").forEach(function (btn) {
     btn.textContent = "Copied"; setTimeout(function () { btn.textContent = "Copy prompt"; }, 1600);
   });
 });
-var tick = "MERGE TO 2048 <b>◆</b> ONLY TWO GOLDEN LIVES CAN EVER EXIST <b>◆</b> MINT $0.20 <b>◆</b> JUMP TO 32 FOR $3 <b>◆</b> MERGE IS FREE <b>◆</b> EVERY LIFE STARTS AT 2 <b>◆</b> ";
+var tick = "$2048 TOKEN · HOLDERS ONLY <b>◆</b> MERGE TO 2048 <b>◆</b> ONLY TWO GOLDEN LIVES CAN EVER EXIST <b>◆</b> MINT $0.20 <b>◆</b> JUMP TO 32 FOR $3 <b>◆</b> MERGE IS FREE <b>◆</b> EVERY LIFE STARTS AT 2 <b>◆</b> ";
 $("tickerText").innerHTML = tick + tick;
