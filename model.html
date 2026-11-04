@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2048 LIFE — Model</title>
+<meta name="description" content="Rules, math, money, and access for 2048 LIFE: the doubling game on BNB Chain with a hard cap of 2,048 units and only two possible golden 2048 lives.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css?v=1">
+</head>
+<body>
+<div class="wrap">
+  <div class="hud">
+    <a class="logo" href="/">2048<i>·</i>LIFE</a>
+    <div class="stat"><b>2,048</b><span>UNITS · HARD CAP</span></div>
+    <div class="stat"><b>11</b><span>RUNGS · 2 TO 2048</span></div>
+    <div class="stat gold"><b>2</b><span>GOLDEN LIVES · MAX EVER</span></div>
+    <div class="stat"><b>BNB CHAIN</b><span>ANY WALLET · AGENT FIRST</span></div>
+  </div>
+  <nav class="nav"><a href="/">HOME</a><a href="/#mint">MINT</a><a href="/#merge">MERGE</a><a href="/#ladder">LADDER</a><a href="/2048-skill.md">AGENT GUIDE</a></nav>
+
+  <section class="hero">
+    <p class="kick">MODEL · RULES, MATH, MONEY</p>
+    <h1>ONE GAME.<br>NO SHORTCUTS<br>PAST THE MATH.</h1>
+  </section>
+
+  <div class="prose">
+    <p class="secnote">RULES</p>
+    <h2 class="sec" style="margin-top:10px">How a life grows</h2>
+    <p>A life is an ERC-721 monolith with a value: 2, 4, 8, and so on up to 2048. You enter by minting. A base mint gives you a <b>2</b> for $0.20. A jump mint gives you a <b>32</b> for $3. After that, the only way up is merging: burn two lives of equal value that sit in the same wallet, and one life of double value is born in their place.</p>
+    <p>Merging is <b>free</b>, gas only, with no limit while you hold pairs. The two burned lives are destroyed for good, their serials retired. A merged life carries a red seam on its artwork. Two 2048s cannot merge. The ladder ends there.</p>
+
+    <p class="secnote">MATH</p>
+    <h2 class="sec" style="margin-top:10px">2,048 units, counted honestly</h2>
+    <p>The whole game is funded by a pool of <b>2,048 units</b>. A base mint spends 1 unit. A jump mint spends 16 units, because a 32 is worth sixteen 2s. Forging one life of value V eats V/2 units of the pool, one way or another. That is what makes the top of the ladder scarce by arithmetic instead of by promise:</p>
+    <table>
+      <tr><th>VALUE</th><th>BINARY</th><th>UNITS EACH</th><th>MAX THAT CAN EVER EXIST</th></tr>
+      <tr><td>2</td><td>10</td><td>1</td><td>2,048</td></tr>
+      <tr><td>4</td><td>100</td><td>2</td><td>1,024</td></tr>
+      <tr><td>8</td><td>1000</td><td>4</td><td>512</td></tr>
+      <tr><td>16</td><td>10000</td><td>8</td><td>256</td></tr>
+      <tr><td>32</td><td>100000</td><td>16</td><td>128</td></tr>
+      <tr><td>64</td><td>1000000</td><td>32</td><td>64</td></tr>
+      <tr><td>128</td><td>10000000</td><td>64</td><td>32</td></tr>
+      <tr><td>256</td><td>100000000</td><td>128</td><td>16</td></tr>
+      <tr><td>512</td><td>1000000000</td><td>256</td><td>8</td></tr>
+      <tr><td>1024</td><td>10000000000</td><td>512</td><td>4</td></tr>
+      <tr class="goldrow"><td>2048</td><td>100000000000</td><td>1,024</td><td>2</td></tr>
+    </table>
+    <p>One wallet may mint at most <b>64 units</b> in total across both doors. Alone, that climbs to a 128. Anything higher has to pass through other hands: merges of lives bought on the market, or trades between players. The two golden lives will almost certainly be community efforts, whether their owners admit it or not.</p>
+
+    <p class="secnote">MONEY</p>
+    <h2 class="sec" style="margin-top:10px">What it costs, where it goes</h2>
+    <p>Base mint: <b>$0.20</b> (±0.00026 BNB, fixed in the contract at launch). Jump mint: <b>$3</b> (±0.0039 BNB). Merge: free. A full sellout of the pool pays 2,048 × $0.20 = <b>$409.60</b> into the contract, and proceeds are withdrawable by the project owner. Lives then trade freely as standard ERC-721.</p>
+
+    <p class="secnote">ACCESS</p>
+    <h2 class="sec" style="margin-top:10px">Any wallet. Agents first.</h2>
+    <p>Unlike a gated pass, 2048 LIFE asks for no Agent ID. Any BNB wallet may mint and merge. Calls must come from a wallet itself, never an intermediary contract. The smoothest road is still an agent: the <a href="/2048-skill.md">agent guide</a> carries the exact calls, prices, and failure causes, so a Binance Agentic Wallet can play the whole game from a single prompt.</p>
+
+    <p class="secnote">ARTWORK</p>
+    <h2 class="sec" style="margin-top:10px">One slab per life</h2>
+    <p>Every life is drawn by a generator from its chain data: slab height by rung, value and 12-bit binary printed on the piece, serial equal to its tokenId. Minted lives are clean, merged lives carry the red seam, jump lives wear a WARP tag. Only a 2048 is gold. Metadata lives at 2048.life/metadata/&lt;id&gt; and is generated as lives are born.</p>
+  </div>
+
+  <div class="foot"><span><b>2048 LIFE</b> · 2048.LIFE</span><span><a href="/">BACK TO THE GAME</a></span><span>EVERY LIFE STARTS AT 2</span></div>
+</div>
+</body>
+</html>
