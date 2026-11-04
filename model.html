@@ -53,6 +53,11 @@
     <h2 class="sec" style="margin-top:10px">What it costs, where it goes</h2>
     <p>Base mint: <b>$0.20</b> (±0.00026 BNB, fixed in the contract at launch). Jump mint: <b>$3</b> (±0.0039 BNB). Merge: free. A full sellout of the pool pays 2,048 × $0.20 = <b>$409.60</b> into the contract, and proceeds are withdrawable by the project owner. Lives then trade freely as standard ERC-721.</p>
 
+    <p class="secnote">TOKEN</p>
+    <h2 class="sec" style="margin-top:10px">$2048, minted by lives</h2>
+    <p>The game has a token, <b>$2048</b>, with a fixed supply of <b>2,048,000,000</b>. It is never sold. The only minting key is a life: each life can mint <b>1,000,000 $2048 per unit</b> it represents, once. A 2 mints 1,000,000, a 32 mints 16,000,000, a 1024 mints 512,000,000, and a golden 2048 mints 1,024,000,000.</p>
+    <p>Minting the token does not burn or lock the life. Allowances are tracked per life, and a merged life inherits the minted total of its two parents, so climbing the ladder can never mint the same unit twice. Add every possible payout together and it lands exactly on the fixed supply: the gate and the supply are the same math. Minting $2048 is free beyond gas; the life itself was the price.</p>
+
     <p class="secnote">ACCESS</p>
     <h2 class="sec" style="margin-top:10px">Any wallet. Agents first.</h2>
     <p>Unlike a gated pass, 2048 LIFE asks for no Agent ID. Any BNB wallet may mint and merge. Calls must come from a wallet itself, never an intermediary contract. The smoothest road is still an agent: the <a href="/2048-skill.md">agent guide</a> carries the exact calls, prices, and failure causes, so a Binance Agentic Wallet can play the whole game from a single prompt.</p>
