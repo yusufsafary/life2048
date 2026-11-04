@@ -34,6 +34,20 @@ Site: https://2048.life · Model: https://2048.life/model.html
   originOf(uint256) 0x794b2a07 (0 minted, 1 merged, 2 jump) ·
   walletLevelCount(address, uint8) 0x274a1ea2 · mintOpen() 0x24bbd049
 
+## The $2048 token (gate)
+
+- Token: $2048, fixed supply 2,048,000,000. Contract: TO BE ANNOUNCED AT LAUNCH
+  (read it from https://2048.life, Contracts section, like the LIFE address).
+- Only LIFE holders can mint $2048, and only through their own lives:
+  mintTokens(uint256 tokenId) — selector 0x97304ced, value 0 (gas only).
+- Allowance per life = units(value) x 1,000,000 $2048, spendable once per life:
+  allowanceOf(uint256) 0x516d2435 · already minted: tokensMintedOf(uint256) 0xb22c2069
+  (both read on the LIFE contract). Value 2 → 1,000,000; value 32 → 16,000,000;
+  value 2048 → 1,024,000,000.
+- Minting tokens never burns the life. A merged life inherits its parents' minted
+  totals, so its remaining allowance shrinks by whatever they already took.
+- Failures: caller does not own the life; allowance already spent; token mint closed.
+
 ## Procedure
 
 1. Confirm mintOpen() reads 1 and check the caller's minted units stay within 64.
