@@ -21,7 +21,7 @@
     <div class="stat gold"><b id="hudGold">0 / 2</b><span>GOLDEN 2048 FORGED</span></div>
     <div class="stat"><b>BNB CHAIN</b><span>ANY WALLET · AGENT FIRST</span></div>
   </div>
-  <nav class="nav"><a href="#mint">MINT</a><a href="#merge">MERGE</a><a href="#ladder">LADDER</a><a href="#check">CHECK A WALLET</a><a href="/model.html">MODEL</a><a href="/2048-skill.md">AGENT GUIDE</a></nav>
+  <nav class="nav"><a href="#mint">MINT</a><a href="#merge">MERGE</a><a href="#ladder">LADDER</a><a href="#check">CHECK A WALLET</a><a href="#token">TOKEN</a><a href="/model.html">MODEL</a><a href="/2048-skill.md">AGENT GUIDE</a></nav>
 
   <section class="hero">
     <p class="kick">A GAME OF DOUBLING, PLAYED ON CHAIN</p>
@@ -100,12 +100,26 @@
   </div>
   <p class="checkout" id="whoOut">Counts per rung for any wallet, read from chain. Opens with the contract.</p>
 
-  <p class="secnote">05 · RECORD</p>
+  <p class="secnote">05 · TOKEN</p>
+  <h2 class="sec" id="token">$2048, behind the gate.</h2>
+  <div class="card" style="border-color:var(--ink);background:var(--gold);max-width:900px">
+    <p class="lvl" style="color:var(--ink)">THE TOKEN · FIXED SUPPLY 2,048,000,000</p>
+    <h3 style="color:var(--ink)">Lives mint the token</h3>
+    <p style="color:#3d2f05">There is exactly one way to mint $2048: hold a life. Every life carries a minting allowance of <b>1,000,000 $2048 per unit</b> it represents. A value 2 mints 1,000,000. A value 32 mints 16,000,000. A golden 2048 mints 1,024,000,000, half the supply in a single key.</p>
+    <p style="color:#3d2f05">Minting never burns the life, and an allowance can be spent only once per life. Merge two lives and the child inherits whatever its parents already minted, so no unit ever pays out twice. Token minted so far: <b id="hudToken">0 / 2,048,000,000</b></p>
+    <details>
+      <summary>PROMPT FOR YOUR AGENT</summary>
+      <pre id="promptToken">Read https://2048.life/2048-skill.md and follow it exactly. For each 2048 LIFE life in my wallet with unspent allowance, mint its $2048: call mintTokens(tokenId) on the $2048 token contract with zero value, preview first, then execute. Report how much $2048 each life minted.</pre>
+      <button class="btn copy" data-copy="promptToken">Copy prompt</button>
+    </details>
+  </div>
+
+  <p class="secnote">06 · RECORD</p>
   <h2 class="sec">Contracts.</h2>
   <section class="contracts">
     <div class="ccard">
       <h4>2048 LIFE (LIFE)</h4>
-      <p>One ERC-721 contract holds the whole game: minting, the warp, merging, and the unit cap of 2,048. Mint proceeds collect in the contract for the owner. No token, no presale, no second contract.</p>
+      <p>One ERC-721 contract holds the whole game: minting, the warp, merging, and the unit cap of 2,048. Mint proceeds collect in the contract for the owner. A second contract issues the $2048 token, mintable by life holders only (section 05). No presale.</p>
       <p class="addr" id="contractAddr">Contract address: published here at launch, before mint opens.</p>
     </div>
     <div class="ccard">
@@ -117,6 +131,6 @@
 
   <div class="foot"><span><b>2048 LIFE</b> · 2048.LIFE</span><span>MINT AND MERGE RUN THROUGH YOUR AGENT · NO CONNECT WALLET</span><span>EVERY LIFE STARTS AT 2</span></div>
 </div>
-<script src="/app.js?v=1"></script>
+<script src="/app.js?v=2"></script>
 </body>
 </html>
